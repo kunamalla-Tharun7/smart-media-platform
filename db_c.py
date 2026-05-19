@@ -7,13 +7,15 @@ db_connection=mysql.connector.connect(
     database=st.secrets["database"],
     password=st.secrets["password"],
     port=st.secrets["port"]
-
-db_connection= mysql.connector.connect(
-    host=st.secrets["MYSQL_HOST"],
-    port=st.secrets["MYSQL_PORT"],
-    user=st.secrets["MYSQL_USER"],
-    password=st.secrets["MYSQL_PASSWORD"],
-    database=st.secrets["MYSQL_DB"]
 )
 
-cursor=conn.cursor(dictionary=True)
+cur_obj=db_connection.cursor(dictionary=True)
+
+cur_obj.execute("""
+                CREATE TABLE IF NOT EXISTS users(
+                id INT PRIMARY KEY AUTO_INCREMENT,
+                name VARCHAR(50) NOT NULL,
+                email VARCHAR(50) UNIQUE NOT NULL,
+                password VARCHAR(255) NOT NULL)
+                """
+)
