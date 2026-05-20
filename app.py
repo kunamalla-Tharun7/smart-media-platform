@@ -10,11 +10,16 @@ tab1,tab2=st.tabs(
 with tab1:
     st.header("Login")
     with st.form("Login_form"):
-        st.text_input("Email ")
-        st.text_input("Password",type="password")
+        emaill=st.text_input("Email ")
+        passwordl=st.text_input("Password",type="password")
         btn1=st.form_submit_button("Login")
         if btn1:
+            query="select * from users where email=%s and password=%s"
+            data=(emaill,passwordl)
+            cur_obj.execute(query,data)
+            db_connection.commit()
             st.success("Login Successful ✔️..")
+
 
 with tab2:
     st.header("Signup")
