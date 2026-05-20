@@ -19,3 +19,18 @@ cur_obj.execute("""
                 password VARCHAR(255) NOT NULL)
                 """
 )
+
+cur_obj.execute("""
+                 CREATE TABLE IF NOT EXISTS files(
+                id INT PRIMARY KEY AUTO_INCREMENT,
+                user_id INT,
+                file_name VARCHAR(255),
+                file_type VARCHAR(100),
+                file_url TEXT,
+                upload_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+                FOREIGN KEY(user_id) REFERENCES users(id)
+                
+                )
+                
+                """)
+db_connection.commit()
