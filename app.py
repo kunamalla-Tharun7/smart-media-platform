@@ -32,3 +32,6 @@ if password==confirm_password:
     data=(name,email,password)
     cur_obj.execute(query,data)
     db_connection.commit()
+
+all_data=cur_obj.execute("select * from users")
+print(all_data)
