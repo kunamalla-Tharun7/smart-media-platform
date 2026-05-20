@@ -27,7 +27,7 @@ with tab2:
         if btn2:
             st.success("Signup Successful ✔️...")
 
-if password==confirm_password:
+if btn2:
     query=" insert into users(name,email,password) values(%s,%s,%s)"
     data=(name,email,password)
     cur_obj.execute(query,data)
