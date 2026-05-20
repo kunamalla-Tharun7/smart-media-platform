@@ -24,11 +24,11 @@ with tab2:
         password=st.text_input("password")
         confirm_password=st.text_input("confirm password")
         btn2=st.form_submit_button("Signup")
-        if btn2:
-            st.success("Signup Successful ✔️...")
+         
 
-if btn2:
-    query=" insert into users(name,email,password) values(%s,%s,%s)"
-    data=(name,email,password)
-    cur_obj.execute(query,data)
-    db_connection.commit()
+        if btn2:
+            query=" insert into users(name,email,password) values(%s,%s,%s)"
+            data=(name,email,password)
+            cur_obj.execute(query,data)
+            db_connection.commit()
+            st.success("Signup Successful ✔️...")
