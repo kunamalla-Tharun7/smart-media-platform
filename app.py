@@ -19,12 +19,16 @@ with tab1:
 with tab2:
     st.header("Signup")
     with st.form("Signup_form"):
-        st.text_input("Name")
-        st.text_input("Email")
-        st.text_input("password")
-        st.text_input("confirm password")
+        name=st.text_input("Name")
+        email=st.text_input("Email")
+        password=st.text_input("password")
+        confirm_password=st.text_input("confirm password")
         btn2=st.form_submit_button("Signup")
         if btn2:
             st.success("Signup Successful ✔️...")
 
-
+if password==confirm_password:
+    query=""" insert into users(name,email,password) values(%s,%s,%s)"""
+    data=(name,email,password)
+    cur_obj.execute(query,data)
+    db_connection.commit()
