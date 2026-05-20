@@ -13,7 +13,7 @@ with tab1:
         st.text_input("Password",type="password")
         btn1=st.form_submit_button("Login")
         if btn1:
-            st.success("Login Successful...")
+            st.success("Login Successful ✔️..")
 
 with tab2:
     st.header("Signup")
@@ -24,6 +24,6 @@ with tab2:
         st.text_input("confirm password")
         btn2=st.form_submit_button("Signup")
         if btn2:
-            st.success("Signup Successful...")
+            st.success("Signup Successful ✔️...")
 
 
