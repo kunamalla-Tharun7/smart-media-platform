@@ -32,4 +32,3 @@ if password==confirm_password:
     data=(name,email,password)
     cur_obj.execute(query,data)
     db_connection.commit()
-
