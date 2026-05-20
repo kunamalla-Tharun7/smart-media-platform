@@ -1,4 +1,5 @@
 import streamlit as st
+
 st.title("Media Platform")
 tab1,tab2=st.tabs(
 [
