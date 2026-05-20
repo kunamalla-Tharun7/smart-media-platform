@@ -28,7 +28,7 @@ with tab2:
             st.success("Signup Successful ✔️...")
 
 if password==confirm_password:
-    query=""" insert into users(name,email,password) values(%s,%s,%s)"""
+    query=" insert into users(name,email,password) values(%s,%s,%s)"
     data=(name,email,password)
     cur_obj.execute(query,data)
     db_connection.commit()
