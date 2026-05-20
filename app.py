@@ -33,5 +33,6 @@ if password==confirm_password:
     cur_obj.execute(query,data)
     db_connection.commit()
 
-all_data=cur_obj.execute("select * from users")
+cur_obj.execute("select * from users")
+all_data=cur_obj.fetchall()
 print(all_data)
