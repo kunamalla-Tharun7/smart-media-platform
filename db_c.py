@@ -34,3 +34,5 @@ cur_obj.execute("""
                 
                 """)
 db_connection.commit()
+
+print("Tables created successfully ")
