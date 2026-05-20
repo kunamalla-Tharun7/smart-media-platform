@@ -1,5 +1,6 @@
 import streamlit as st
 
+from db_c import db_connection,cur_obj
 st.title("Media Platform")
 tab1,tab2=st.tabs(
 [
